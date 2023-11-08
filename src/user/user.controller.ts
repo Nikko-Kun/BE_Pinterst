@@ -10,9 +10,9 @@ import { UserSignUpType } from 'src/auth/entities/auth.entity';
 import { Response } from 'express';
 import { UserCommentType } from './entities/user.entity';
 
-@ApiBearerAuth()        // Hiện ổ khóa trên swagger
+@ApiBearerAuth()       
 @UseGuards(AuthGuard("jwt"))
-@ApiTags("User")        // Gom nhóm API Swagger
+@ApiTags("User")        
 @Controller('api/user')
 export class UserController {
   constructor(
@@ -132,14 +132,14 @@ export class UserController {
   // @ApiBody({ type: FileUploadDto })
   @HttpCode(201)
   @Post("upload-img/:userID")
-  @UseInterceptors(FileInterceptor("hinhAnh",     // Tham số 1: key FE gửi lên
-    {                                             // Tham số 2: định nghĩa nơi lưu, và lưu tên mới cho file
+  @UseInterceptors(FileInterceptor("hinhAnh",     
+    {                                             
       storage: diskStorage({
         destination: process.cwd() + "/public/img",
-        filename: (req, file, callback) => callback(null, new Date().getTime() + "_" + file.originalname) // null: tham số báo lỗi
+        filename: (req, file, callback) => callback(null, new Date().getTime() + "_" + file.originalname) 
       })
     }
-  ))    // Sử dụng một middleware, cho phép chèn phía trước khi truy cập API
+  ))    
   uploadImg(
     @UploadedFile() file: Express.Multer.File,
     @Param("userID") userID: string,
@@ -159,9 +159,5 @@ export class UserController {
     return this.userService.updateInfo(id, body, res)
   }
 
-  // Cách lấy biến môi trường nestjs
-  // @Get("/get-dotenv")
-  // getEnv() {
-  //   return this.configService.get("TITLE")
-  // }
+
 }

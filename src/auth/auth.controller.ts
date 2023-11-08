@@ -7,7 +7,7 @@ import { Response } from 'express';
 
 
 
-@ApiTags("Auth")        // Gom nhóm API ở UI Swagger
+@ApiTags("Auth")        
 @Controller('api/auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}

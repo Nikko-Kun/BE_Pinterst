@@ -60,11 +60,11 @@ INSERT INTO `binh_luan` (`binh_luan_id`, `nguoi_dung_id`, `hinh_id`, `ngay_binh_
 INSERT INTO `binh_luan` (`binh_luan_id`, `nguoi_dung_id`, `hinh_id`, `ngay_binh_luan`, `noi_dung`) VALUES
 (4, 4, 4, '2023-09-09', 'Bình luận hình 4'),
 (5, 5, 5, '2023-09-10', 'Bình luận hình 5'),
-(6, 1, 2, '2023-09-14', 'Hình nhìn ok quá ní !'),
-(7, 1, 2, '2023-09-14', 'Hình nhìn ok quá ní !'),
-(8, 5, 3, '2023-09-14', 'Hình nhìn ok quá ní !'),
-(9, 5, 3, '2023-09-14', 'Hình nhìn ok quá ní !'),
-(10, 6, 5, '2023-09-14', 'Test bình luận');
+(6, 1, 2, '2023-09-14', 'Bình luận hình 6'),
+(7, 1, 2, '2023-09-14', 'Bình luận hình 7'),
+(8, 5, 3, '2023-09-14', 'Bình luận hình 8'),
+(9, 5, 3, '2023-09-14', 'Bình luận hình 9'),
+(10, 6, 5, '2023-09-14', 'Bình luận hình 10');
 
 INSERT INTO `hinh_anh` (`hinh_id`, `ten_hinh`, `duong_dan`, `mo_ta`, `nguoi_dung_id`) VALUES
 (1, 'Hình 1', 'duongdanhinhanh1.jpg', 'Mô tả hình 1', 1);
@@ -75,7 +75,7 @@ INSERT INTO `hinh_anh` (`hinh_id`, `ten_hinh`, `duong_dan`, `mo_ta`, `nguoi_dung
 INSERT INTO `hinh_anh` (`hinh_id`, `ten_hinh`, `duong_dan`, `mo_ta`, `nguoi_dung_id`) VALUES
 (4, 'Hình 4', 'duongdanhinhanh4.jpg', 'Mô tả hình 4', 4),
 (5, 'Hình 5', 'duongdanhinhanh5.jpg', 'Mô tả hình 5', 5),
-(11, '1694877683982_Box.jpg', 'C:\\Users\\Admin\\Desktop\\Cybersoft\\NodeJS33\\7_bt_printerest/public/img/1694877683982_Box.jpg', 'hình đẹp', 6);
+(11, '1694877683982_Box.jpg', 'C:\\Users\\Admin\\Desktop\\Cybersoft\\NodeJS35\\7_bt_printerest/public/img/1694877683982_Box.jpg', 'hình đẹp', 6);
 
 INSERT INTO `luu_anh` (`nguoi_dung_id`, `hinh_id`, `ngay_luu`) VALUES
 (1, 1, '2023-09-06');
@@ -97,7 +97,7 @@ INSERT INTO `nguoi_dung` (`nguoi_dung_id`, `email`, `mat_khau`, `ho_ten`, `tuoi`
 INSERT INTO `nguoi_dung` (`nguoi_dung_id`, `email`, `mat_khau`, `ho_ten`, `tuoi`, `anh_dai_dien`) VALUES
 (4, 'nguoidung4@gmail.com', '$2b$10$9H5pWFDbCAKBN0HL33Eti.9qMRzxTIuiPxsbI.peTyHzXFnNFyZVi', 'Người Dùng 4', 22, 'duongdananh4.jpg'),
 (5, 'nguoidung5@gmail.com', '$2b$10$9H5pWFDbCAKBN0HL33Eti.9qMRzxTIuiPxsbI.peTyHzXFnNFyZVi', 'Người Dùng 5', 35, 'duongdananh5.jpg'),
-(6, 'nguoidung6@gmail.com', '$2b$10$5BqHQ0dBDPgXolWGE7ggyuzt8CTMss3onCrqq8DpVvIJAZvhFMUjO', 'NguyenDuctannnn', 30, 'duongdananh6.jpg');
+(6, 'nguoidung6@gmail.com', '$2b$10$5BqHQ0dBDPgXolWGE7ggyuzt8CTMss3onCrqq8DpVvIJAZvhFMUjO', 'Người Dùng 6', 30, 'duongdananh6.jpg');
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

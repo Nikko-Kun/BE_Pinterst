@@ -4,8 +4,6 @@ import { ConfigService } from '@nestjs/config';
 import { UserSignUpType } from 'src/auth/entities/auth.entity';
 import { Response } from 'express';
 import { errorCode, failCode, successCode } from 'src/Config/response';
-// THƯ VIỆN MÃ HÓA PASSWORD
-// yarn add bcrypt
 import * as bcrypt from 'bcrypt';
 import { UserCommentType, UserImgType, UserSaveImgType } from './entities/user.entity';
 import * as fs from 'fs';
@@ -45,7 +43,7 @@ export class UserService {
       let data = await this.model.hinh_anh.findMany({
         where: {
           ten_hinh: {
-            contains: nameImg   // LIKE '%nameImg%'
+            contains: nameImg   
           }
         }
       })
@@ -165,13 +163,6 @@ export class UserService {
         return failCode(res, '', 400, "Hình ảnh không tồn tại !")
       }
 
-      // let newData = {
-      //   nguoi_dung_id,
-      //   hinh_id,
-      //   ngay_binh_luan,
-      //   noi_dung,
-      // };
-
       await this.model.binh_luan.create({
         data: body,
       });
@@ -290,7 +281,6 @@ export class UserService {
         return failCode(res, '', 400, "Hình ảnh không tồn tại nên không thể xóa !")
       }
 
-      // Trước tiên, hãy kiểm tra các tham chiếu đến bản ghi này và xóa chúng
       await this.model.luu_anh.deleteMany({
         where: {
           hinh_id: +id
@@ -303,7 +293,6 @@ export class UserService {
         }
       });
 
-      // Sau đó, bạn có thể xóa bản ghi hinh_anh bình thường
       await this.model.hinh_anh.delete({
         where: {
           hinh_id: +id
@@ -333,7 +322,7 @@ export class UserService {
       });
 
       if (checkUserID === null) {
-        fs.unlink(process.cwd() + "/public/img/" + file.filename, (err) => {    // xóa file ảnh theo đường dẫn nếu người dùng ko tồn tại
+        fs.unlink(process.cwd() + "/public/img/" + file.filename, (err) => {  
           if (err) {
             console.error("Error deleting file:", err);
           }
@@ -353,7 +342,7 @@ export class UserService {
 
       let newData: UserSaveImgType = {
         nguoi_dung_id: +userID,
-        hinh_id: createdImage.hinh_id, // Lấy hinh_id từ bản ghi vừa tạo
+        hinh_id: createdImage.hinh_id, 
         ngay_luu: new Date()
       }
       await this.model.luu_anh.create({
@@ -392,7 +381,7 @@ export class UserService {
           email
         },
         data: {
-          mat_khau: await bcrypt.hash(mat_khau, 10), //  thay đổi bcrypt.hashSync thành await bcrypt.hash để sử dụng hàm hash bất đồng bộ. Điều này cần thiết để tránh blocking thread chính khi mã hóa mật khẩu.
+          mat_khau: await bcrypt.hash(mat_khau, 10), 
           ho_ten,
           tuoi,
           anh_dai_dien

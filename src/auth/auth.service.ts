@@ -3,8 +3,7 @@ import { PrismaClient } from '@prisma/client';
 import { JwtService } from '@nestjs/jwt';
 import { errorCode, failCode, successCode } from 'src/Config/response';
 import { Response } from 'express';
-// THƯ VIỆN MÃ HÓA PASSWORD
-// yarn add bcrypt
+
 import * as bcrypt from 'bcrypt';
 import { UserSignInDto } from './dto/auth.dto';
 import { UserSignUpType } from './entities/auth.entity';
@@ -30,11 +29,11 @@ export class AuthService {
       });
 
       if (checkEmail) {
-        // check password
-        let checkPass = bcrypt.compareSync(mat_khau, checkEmail.mat_khau);    //: tham số 1: dữ liệu chưa mã hóa, tham số 2: dữ liệu đã mã hóa
+        
+        let checkPass = bcrypt.compareSync(mat_khau, checkEmail.mat_khau);    
         if (checkPass == true) {
-          // ⭐ để 30d cho mentor dễ chấm bài⭐
-          let token = this.jwtService.sign({ data: checkEmail }, { expiresIn: '30d', secret: 'NODE' },); // Khóa bí mật bên files "jwt.strategy.ts"
+          
+          let token = this.jwtService.sign({ data: checkEmail }, { expiresIn: '30d', secret: 'NODE' },); 
           successCode(res, token, 200, 'Login thành công !');
         } else {
           failCode(res, '', 400, 'Mật khẩu không đúng !');
@@ -65,10 +64,10 @@ export class AuthService {
         return failCode(res, '', 400, 'Email đã tồn tại !');
       }
 
-      // mã hóa mật khẩu
+      
       let newData = {
         email,
-        mat_khau: await bcrypt.hash(mat_khau, 10), //  thay đổi bcrypt.hashSync thành await bcrypt.hash để sử dụng hàm hash bất đồng bộ. Điều này cần thiết để tránh blocking thread chính khi mã hóa mật khẩu.
+        mat_khau: await bcrypt.hash(mat_khau, 10), 
         ho_ten,
         tuoi,
         anh_dai_dien,
@@ -82,7 +81,7 @@ export class AuthService {
     } catch (exception) {
       console.log("🚀 ~ file: auth.service.ts:83 ~ AuthService ~ signUp ~ exception:", exception)
       errorCode(res, 'Lỗi BE');
-      // errorCode(res, `Lỗi BE: ${exception}`);
+      
     }
   }
 }

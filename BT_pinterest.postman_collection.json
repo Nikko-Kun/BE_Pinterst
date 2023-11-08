@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"nguoidung6@gmail.com\",\r\n    \"mat_khau\": \"1234\",\r\n    \"ho_ten\": \"NguyenDuctan\",\r\n    \"tuoi\": 20,\r\n    \"anh_dai_dien\": \"\"\r\n}",
+					"raw": "{\r\n    \"email\": \"nguoidung6@gmail.com\",\r\n    \"mat_khau\": \"1234\",\r\n    \"ho_ten\": \"NguyenNhutQuang\",\r\n    \"tuoi\": 20,\r\n    \"anh_dai_dien\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -229,7 +229,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nguoi_dung_id\": 5,\r\n\t\"hinh_id\": 3,\r\n\t\"ngay_binh_luan\": \"2023-09-14T08:21:25.687Z\",\r\n\t\"noi_dung\": \"Hình nhìn ok quá ní !\"\r\n}",
+					"raw": "{\r\n    \"nguoi_dung_id\": 5,\r\n\t\"hinh_id\": 3,\r\n\t\"ngay_binh_luan\": \"2023-09-14T08:21:25.687Z\",\r\n\t\"noi_dung\": \"Bình luận hình!\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -464,7 +464,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"nguoidung6@gmail.com\",\r\n    \"mat_khau\": \"1234\",\r\n    \"ho_ten\": \"NguyenDuctannnn\",\r\n    \"tuoi\": 30,\r\n    \"anh_dai_dien\": \"\"\r\n}",
+					"raw": "{\r\n    \"email\": \"nguoidung6@gmail.com\",\r\n    \"mat_khau\": \"1234\",\r\n    \"ho_ten\": \"NguyenNhutQuang\",\r\n    \"tuoi\": 30,\r\n    \"anh_dai_dien\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
